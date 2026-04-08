@@ -1457,7 +1457,7 @@ class _BackendFinanceProvider(_FinanceProvider):
         payload = {"symbol": self.symbol, "interval": period}
 
         response = requests.post(
-            f"{QUANTVN_URL}/vn/balance-sheet",
+            f"{QUANTVN_URL}/vn/finance/balance-sheet",
             json=payload,
             headers={"x-api-key": api_key},
         )
@@ -1489,7 +1489,7 @@ class _BackendFinanceProvider(_FinanceProvider):
         payload = {"symbol": self.symbol, "interval": period}
 
         response = requests.post(
-            f"{QUANTVN_URL}/vn/income-statement",
+            f"{QUANTVN_URL}/vn/finance/income-statement",
             json=payload,
             headers={"x-api-key": api_key},
         )
@@ -1521,7 +1521,7 @@ class _BackendFinanceProvider(_FinanceProvider):
         payload = {"symbol": self.symbol, "interval": period}
 
         response = requests.post(
-            f"{QUANTVN_URL}/vn/cash-flow",
+            f"{QUANTVN_URL}/vn/finance/cash-flow",
             json=payload,
             headers={"x-api-key": api_key},
         )
@@ -2293,7 +2293,7 @@ def get_hist(symbol: str, resolution: str = "1H"):
     payload = {"symbol": sym, "interval": interval_mapped}
 
     response = requests.post(
-        f"{QUANTVN_URL}/vn/stock-historical",
+        f"{QUANTVN_URL}/vn/stock/stock-historical",
         json=payload,
         headers={"x-api-key": api_key},
     )
